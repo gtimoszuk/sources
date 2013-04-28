@@ -1,6 +1,11 @@
 package pl.edu.mimuw.sources;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Utils {
+
+	static final Logger LOGGER = LoggerFactory.getLogger(Utils.class);
 
 	public ClassInfo getClassAndPackage(PathModel.PathChangeModel pathChangeModel) {
 
@@ -26,19 +31,20 @@ public class Utils {
 
 	public static String[] fixName(String name) {
 		String[] prefixesToBeRemovedFromTheBegining = new String[] { "src.main.java.", "src.test.java.", "src.main.",
-				"src.test.", "src." };
+				"src.test.", "src.", "test.src." };
 		for (int i = 0; i < prefixesToBeRemovedFromTheBegining.length; i++) {
 			if (name.startsWith(prefixesToBeRemovedFromTheBegining[i])) {
 				return new String[] { "", name.substring(prefixesToBeRemovedFromTheBegining[i].length()) };
 			}
 		}
 
-		String[] suffixesToBeRemoved = new String[] { ".src.main.java.", ".src.test.java." };
+		String[] suffixesToBeRemoved = new String[] { ".src.main.java.", ".src.test.java.", ".src.test.", ".src.java." };
 		for (int i = 0; i < suffixesToBeRemoved.length; i++) {
 			if (name.indexOf(suffixesToBeRemoved[i]) > 0) {
+				LOGGER.trace("name: {} suffix to be removed {}", name, suffixesToBeRemoved[i]);
 				int moduleEndPosition = name.indexOf(suffixesToBeRemoved[i]);
 				return new String[] { name.substring(0, moduleEndPosition),
-						name.substring(moduleEndPosition + suffixesToBeRemoved[1].length()) };
+						name.substring(moduleEndPosition + suffixesToBeRemoved[i].length()) };
 
 			}
 		}

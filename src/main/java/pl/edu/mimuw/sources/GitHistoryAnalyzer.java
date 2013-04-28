@@ -45,6 +45,13 @@ public class GitHistoryAnalyzer {
 		csvFileName = downloadPrefix + projectName + "-" + timeString + ".csv";
 	}
 
+	public GitHistoryAnalyzer(String projectName, String repoUrl, String downloadPrefix, String repoDir) {
+		this.repoUrl = repoUrl;
+		String timeString = Calendar.getInstance().getTime().toString();
+		this.repoDir = repoDir;
+		csvFileName = downloadPrefix + projectName + "-" + timeString + ".csv";
+	}
+
 	private void cloneMethod() throws GitAPIException {
 		CloneCommand clone = new CloneCommand();
 		clone.setURI(repoUrl);
@@ -123,6 +130,15 @@ public class GitHistoryAnalyzer {
 	public String generateCVSWithHistory() throws GitAPIException, IOException {
 		LOGGER.info("begin");
 		cloneMethod();
+		buildRepository();
+		analyzeHistory();
+		generateCSV();
+		LOGGER.info("end");
+		return csvFileName;
+	}
+
+	public String generateCVSWithHistoryFromExistingRepo() throws GitAPIException, IOException {
+		LOGGER.info("begin project repo dir {} out dir", repoDir, csvFileName);
 		buildRepository();
 		analyzeHistory();
 		generateCSV();
