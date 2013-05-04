@@ -124,4 +124,11 @@ public class GitHistoryAnalyzerTest {
 		gitHistoryAnalyzer.generateCVSWithHistoryFromExistingRepo();
 	}
 
+	@Test
+	public void jLoximFromExistingRepo() throws GitAPIException, IOException {
+		GitHistoryAnalyzer gitHistoryAnalyzer = new GitHistoryAnalyzer("jLoxim", "empty", OUT_DIR,
+				"/home/ballo0/GTI/projects/sourcesProjects/jloxim/");
+		gitHistoryAnalyzer.generateCVSWithHistoryFromExistingRepo();
+	}
+
 }
