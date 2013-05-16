@@ -64,7 +64,8 @@ public class GitHistoryAnalyzerTest {
 	@Test
 	public void hibernateTestFromExistingRepo() throws GitAPIException, IOException {
 		GitHistoryAnalyzer gitHistoryAnalyzer = new GitHistoryAnalyzer("hibernate",
-				"https://github.com/hibernate/hibernate-orm.git", OUT_DIR, "/tmp/hibernate/");
+				"https://github.com/hibernate/hibernate-orm.git", OUT_DIR,
+				"/home/ballo0/GTI/projects/sourcesProjects/hibernate/");
 		gitHistoryAnalyzer.generateCVSWithHistoryFromExistingRepo();
 	}
 

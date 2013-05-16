@@ -28,7 +28,7 @@ public class CommitInfo {
 		return message;
 	}
 
-	public int getTime() {
-		return time;
+	public long getTime() {
+		return new Long(time) * 1000;
 	}
 }
