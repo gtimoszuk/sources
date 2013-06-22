@@ -10,7 +10,10 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import pl.edu.mimuw.sources.PathModel.PathChangeModel;
+import pl.edu.mimuw.sources.algo.CostCalculator;
+import pl.edu.mimuw.sources.model.ClassInfo;
+import pl.edu.mimuw.sources.model.CommitInfo;
+import pl.edu.mimuw.sources.model.PathModel.PathChangeModel;
 import au.com.bytecode.opencsv.CSVWriter;
 
 public class GitHistoryAnalyzer extends GitAnalyzeHelper {

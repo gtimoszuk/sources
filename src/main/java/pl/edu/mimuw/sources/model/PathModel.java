@@ -1,4 +1,4 @@
-package pl.edu.mimuw.sources;
+package pl.edu.mimuw.sources.model;
 
 import java.io.Serializable;
 

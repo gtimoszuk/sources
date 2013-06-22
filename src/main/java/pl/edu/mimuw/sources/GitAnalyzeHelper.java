@@ -23,9 +23,10 @@ import org.eclipse.jgit.util.io.DisabledOutputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import pl.edu.mimuw.sources.PathModel.PathChangeModel;
+import pl.edu.mimuw.sources.model.CommitInfo;
+import pl.edu.mimuw.sources.model.PathModel.PathChangeModel;
 
-public class GitAnalyzeHelper {
+public abstract class GitAnalyzeHelper {
 
 	static final Logger LOGGER = LoggerFactory.getLogger(GitAnalyzeHelper.class);
 

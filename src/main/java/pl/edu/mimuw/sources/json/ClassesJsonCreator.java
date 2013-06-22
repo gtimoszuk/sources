@@ -1,4 +1,4 @@
-package pl.edu.mimuw.sources;
+package pl.edu.mimuw.sources.json;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -12,6 +12,10 @@ import java.util.Set;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import pl.edu.mimuw.sources.GitAnalyzeHelper;
+import pl.edu.mimuw.sources.model.CommitInfo;
+import pl.edu.mimuw.sources.model.PathModel;
 
 public class ClassesJsonCreator extends GitAnalyzeHelper {
 

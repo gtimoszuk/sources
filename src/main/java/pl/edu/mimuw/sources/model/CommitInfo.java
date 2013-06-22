@@ -1,6 +1,7 @@
-package pl.edu.mimuw.sources;
+package pl.edu.mimuw.sources.model;
 
 import java.util.List;
+
 
 public class CommitInfo {
 

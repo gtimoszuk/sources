@@ -1,8 +1,11 @@
-package pl.edu.mimuw.sources;
+package pl.edu.mimuw.sources.algo;
 
 import java.util.Stack;
 
-import pl.edu.mimuw.sources.PathModel.PathChangeModel;
+import pl.edu.mimuw.sources.Utils;
+import pl.edu.mimuw.sources.model.ClassInfo;
+import pl.edu.mimuw.sources.model.CommitInfo;
+import pl.edu.mimuw.sources.model.PathModel.PathChangeModel;
 
 import com.google.common.base.Strings;
 
