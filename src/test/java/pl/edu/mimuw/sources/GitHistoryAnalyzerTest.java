@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import pl.edu.mimuw.sources.csv.GitHistoryAnalyzer;
+
 public class GitHistoryAnalyzerTest {
 
 	static final Logger LOGGER = LoggerFactory.getLogger(GitHistoryAnalyzerTest.class);
